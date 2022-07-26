@@ -1,0 +1,31 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "frontend of diplomas project",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhoine345/movies-explorer-api.git"
+  },
+  "author": "Ivan Semenov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhoine345/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/dhoine345/movies-explorer-api#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.7"
+  }
+}
