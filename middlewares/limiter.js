@@ -1,10 +1,10 @@
 const rateLimit = require('express-rate-limit');
-//const { message } = require('../utils/constants');
+const { messages } = require('../utils/constants');
 
 const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
+  windowMs: 60 * 60 * 1000,
   max: 100,
-  //message: message.tooMuchRequestsErr,
+  message: messages.tooMuchRequestsErr,
   standardHeaders: true,
   legacyHeaders: false,
 });
