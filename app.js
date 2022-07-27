@@ -8,12 +8,13 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
 const errorHandler = require('./middlewares/errorHandler');
 const cors = require('./middlewares/cors');
+const { DB } = require('./utils/constants');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, NODE_ENV, MONGOOSE_DB } = process.env;
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/moviesdb', {
+mongoose.connect(NODE_ENV === 'production' ? MONGOOSE_DB : DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

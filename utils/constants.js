@@ -34,10 +34,13 @@ const allowedCors = [
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
+const DB = 'mongodb://localhost:27017/moviesdb';
+
 module.exports = {
   regexUrl,
   messages,
   resCodes,
   allowedCors,
   DEFAULT_ALLOWED_METHODS,
+  DB,
 };
