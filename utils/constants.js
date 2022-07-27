@@ -1,12 +1,10 @@
-const regexUrl = /https?:\/\/[www.]*[\w-]+\.[a-z]+[\/\w\S]*/;
+const regexUrl = /https?:\/\/(www\.)?[a-zA-Z\d-]+\.[\w\d\-.~:/?#[\]@!$&'()*+,;=]{2,}#?/;
 
 const messages = {
   movieError: 'Фильм не найден',
   userError: 'Запрашиваемый пользователь не найден',
-  //commonError: { message: 'Произошла ошибка' },
   badRequest: 'Переданы некорректные данные',
   pageNotFound: 'Страница не найдена',
-  //incorrectEmail: 'Неправильный формат почты',
   serverError: 'На сервере произошла ошибка',
   emailError: 'Указанный email уже занят',
   forbidden: 'Действие запрещено',
@@ -25,8 +23,21 @@ const resCodes = {
   UNAUTHORIZED_ERROR: 401,
 };
 
+const allowedCors = [
+  'https://fproject.students.nomoredomains.sbs',
+  'http://fproject.students.nomoredomains.sbs',
+  'http://localhost:3000',
+  'https://localhost:3000',
+  'https://api.fproject.students.nomoredomains.sbs',
+  'http://api.fproject.students.nomoredomains.sbs',
+];
+
+const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+
 module.exports = {
   regexUrl,
   messages,
   resCodes,
+  allowedCors,
+  DEFAULT_ALLOWED_METHODS,
 };
