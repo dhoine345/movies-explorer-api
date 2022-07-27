@@ -10,7 +10,6 @@ const messages = {
   forbidden: 'Действие запрещено',
   unauthorized: 'Необходима авторизация',
   emailOrPasswordErr: 'Неправильные почта или пароль',
-  tooMuchRequestsErr: 'Слишком много запросов, пожалуйста, повторите попытку позже',
 };
 
 const resCodes = {
