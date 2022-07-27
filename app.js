@@ -8,6 +8,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
 const errorHandler = require('./middlewares/errorHandler');
 const cors = require('./middlewares/cors');
+const limiter = require('./middlewares/limiter');
 const { DB } = require('./utils/constants');
 
 const { PORT = 3000, NODE_ENV, MONGOOSE_DB } = process.env;
@@ -28,6 +29,8 @@ app.use(requestLogger);
 app.use(cors);
 
 app.use(helmet());
+
+app.use(limiter);
 
 app.use(routes);
 
