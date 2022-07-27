@@ -24,12 +24,12 @@ const resCodes = {
 };
 
 const allowedCors = [
-  'https://fproject.students.nomoredomains.sbs',
-  'http://fproject.students.nomoredomains.sbs',
+  'https://fproject.students.nomoredomains.xyz',
+  'http://fproject.students.nomoredomains.xyz',
   'http://localhost:3000',
   'https://localhost:3000',
-  'https://api.fproject.students.nomoredomains.sbs',
-  'http://api.fproject.students.nomoredomains.sbs',
+  'https://api.fproject.students.nomoredomains.xyz',
+  'http://api.fproject.students.nomoredomains.xyz',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
