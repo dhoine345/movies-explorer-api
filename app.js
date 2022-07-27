@@ -26,11 +26,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
 
+app.use(limiter);
+
 app.use(cors);
 
 app.use(helmet());
-
-app.use(limiter);
 
 app.use(routes);
 
