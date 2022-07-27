@@ -3,7 +3,7 @@ const { message } = require('../utils/constants');
 
 const limiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 10,
+  max: 100,
   message: message.tooMuchRequestsErr,
   standardHeaders: true,
   legacyHeaders: false,
