@@ -1,22 +1,20 @@
 const { celebrate, Joi } = require('celebrate');
 const { regexUrl } = require('./constants');
 
-/*const validateLogin = celebrate({
+const validateLogin = celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
   }),
-});*/
+});
 
-/*const validateRegistration = celebrate({
+const validateRegistration = celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
     name: Joi.string().min(2).max(30),
-    about: Joi.string().min(2).max(30),
-    avatar: Joi.string().pattern(regexUrl),
   }),
-});*/
+});
 
 /*const validateGetUserById = celebrate({
   params: Joi.object().keys({
@@ -64,4 +62,6 @@ const validateUpdateProfile = celebrate({
 
 module.exports = {
   validateUpdateProfile,
+  validateLogin,
+  validateRegistration,
 };
