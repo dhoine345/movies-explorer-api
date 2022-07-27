@@ -16,12 +16,6 @@ const validateRegistration = celebrate({
   }),
 });
 
-/*const validateGetUserById = celebrate({
-  params: Joi.object().keys({
-    userId: Joi.string().required().length(24).hex(),
-  }),
-});*/
-
 const validateUpdateProfile = celebrate({
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
@@ -29,39 +23,32 @@ const validateUpdateProfile = celebrate({
   }),
 });
 
-/*const validateUpdateAvatar = celebrate({
+const validateCreateMovie = celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string().required().pattern(regexUrl),
+    country: Joi.string().required(),
+    director: Joi.string().required(),
+    duration: Joi.number().required(),
+    year: Joi.string().required(),
+    description: Joi.string().required(),
+    image: Joi.string().pattern(regexUrl),
+    trailerLink: Joi.string().pattern(regexUrl),
+    thumbnail: Joi.string().pattern(regexUrl),
+    movieId: Joi.string().required(),
+    nameRU: Joi.string().required(),
+    nameEN: Joi.string().required(),
   }),
-});*/
+});
 
-/*const validateCreateCard = celebrate({
-  body: Joi.object().keys({
-    name: Joi.string().required().min(2).max(30),
-    link: Joi.string().required().pattern(regexUrl),
-  }),
-});*/
-
-/*const validateDeleteCard = celebrate({
+const validateDeleteMovie = celebrate({
   params: Joi.object().keys({
-    cardId: Joi.string().required().length(24).hex(),
+    movieId: Joi.string().required().length(24).hex(),
   }),
-});*/
-
-/*const validateSetLike = celebrate({
-  params: Joi.object().keys({
-    cardId: Joi.string().required().length(24).hex(),
-  }),
-});*/
-
-/*const validateRemoveLike = celebrate({
-  params: Joi.object().keys({
-    cardId: Joi.string().required().length(24).hex(),
-  }),
-});*/
+});
 
 module.exports = {
   validateUpdateProfile,
   validateLogin,
   validateRegistration,
+  validateCreateMovie,
+  validateDeleteMovie,
 };
