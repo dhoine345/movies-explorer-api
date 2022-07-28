@@ -1,5 +1,4 @@
 const regexUrl = /https?:\/\/(www\.)?[a-zA-Z\d-]+\.[\w\d\-.~:/?#[\]@!$&'()*+,;=]{2,}#?/;
-require('dotenv').config();
 
 const messages = {
   movieError: 'Фильм не найден',
@@ -35,19 +34,10 @@ const allowedCors = [
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
-const DB = 'mongodb://localhost:27017/moviesdb';
-
-const { PORT = 3000, NODE_ENV, MONGOOSE_DB, JWT_SECRET } = process.env;
-
 module.exports = {
   regexUrl,
   messages,
   resCodes,
   allowedCors,
   DEFAULT_ALLOWED_METHODS,
-  DB,
-  PORT,
-  NODE_ENV,
-  MONGOOSE_DB,
-  JWT_SECRET,
 };
