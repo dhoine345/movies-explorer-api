@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const { handleErrors, handleRequest } = require('../utils/utils');
-const { resCodes, messages } = require('../utils/constants');
+const { resCodes, messages, mongoErrCodes } = require('../utils/constants');
 const BadRequestError = require('../utils/errors/NotFoundError');
 const ConflictError = require('../utils/errors/ConflictError');
 const { NODE_ENV, JWT_SECRET } = require('../utils/config');
@@ -18,7 +18,7 @@ const createUser = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError(messages.badRequest));
-      } else if (err.code === 11000) {
+      } else if (err.code === mongoErrCodes.duplicateKey) {
         next(new ConflictError(messages.emailError));
       } else {
         next(err);
@@ -52,7 +52,7 @@ const updateProfile = (req, res, next) => {
   })
     .then((user) => handleRequest(user, res, messages.userError))
     .catch((err) => {
-      if (err.code === 11000) {
+      if (err.code === mongoErrCodes.duplicateKey) {
         next(new ConflictError(messages.emailError));
       }
       handleErrors(err, next)

@@ -34,10 +34,15 @@ const allowedCors = [
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
+const mongoErrCodes = {
+  duplicateKey: 11000
+}
+
 module.exports = {
   regexUrl,
   messages,
   resCodes,
   allowedCors,
   DEFAULT_ALLOWED_METHODS,
+  mongoErrCodes,
 };
