@@ -52,7 +52,12 @@ const updateProfile = (req, res, next) => {
     runValidators: true,
   })
     .then((user) => handleRequest(user, res, messages.userError))
-    .catch((err) => handleErrors(err, next));
+    .catch((err) => {
+      if (err.code === 11000) {
+        next(new ConflictError(messages.emailError));
+      }
+      handleErrors(err, next)
+    });
 };
 
 module.exports = {
