@@ -9,9 +9,7 @@ const routes = require('./routes/index');
 const errorHandler = require('./middlewares/errorHandler');
 const cors = require('./middlewares/cors');
 const limiter = require('./middlewares/limiter');
-const { DB } = require('./utils/constants');
-
-const { PORT = 3000, NODE_ENV, MONGOOSE_DB } = process.env;
+const { DB, PORT, NODE_ENV, MONGOOSE_DB } = require('./utils/constants');
 
 const app = express();
 
