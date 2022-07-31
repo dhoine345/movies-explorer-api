@@ -36,7 +36,9 @@ const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 const mongoErrCodes = {
   duplicateKey: 11000
-}
+};
+
+const devKey = 'dev-secret';
 
 module.exports = {
   regexUrl,
@@ -45,4 +47,5 @@ module.exports = {
   allowedCors,
   DEFAULT_ALLOWED_METHODS,
   mongoErrCodes,
+  devKey,
 };
